@@ -40,3 +40,20 @@ situs dalam 1–2 menit.
 - Ayat diambil dari quran.com (terjemah Kementerian Agama RI). Jangan
   mengetik ulang teks Arab.
 - Disclaimer "Channel ini bukan channel resmi…" wajib ada di footer.
+
+## Panduan kajian (`artikel/`) dan SEO
+
+`artikel/*.html`, `artikel/index.html`, `artikel/artikel.css`, dan
+`sitemap.xml` **dihasilkan oleh skrip** — jangan diedit tangan. Isinya ada di
+project induk: `konten/artikel/<video_id>.json` (+ `_video.json` untuk tanggal,
+durasi, dan frame gambar). Untuk menambah halaman:
+
+1. Ambil transkrip: `yt-dlp --skip-download --write-auto-subs --sub-langs id --sub-format json3 <url>`
+2. Tulis `konten/artikel/<id>.json` mengikuti format file yang sudah ada
+   (panduan isi video, bukan transkrip; tanpa teks ayat/hadits).
+3. Tambah entri di `_video.json`, lalu `python3 -I tools/build_artikel.py`
+   dari project induk.
+4. Commit + push dari folder ini.
+
+Beranda memuat JSON-LD `Organization` + `WebSite`; tiap artikel memuat
+`VideoObject` (dengan `Clip` = momen penting) dan `BreadcrumbList`.
