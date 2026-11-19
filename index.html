@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SuaraQalbu · Nasihat &amp; Kajian Singkat</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Potongan kajian para ustadz dalam video singkat. Tonton gratis di YouTube, dan dukung operasional channel SuaraQalbu lewat Saweria.">
+<meta name="theme-color" content="#f4f6f2">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<link rel="canonical" href="https://rafi-zimraan.github.io/suaraqalbu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SuaraQalbu">
+<meta property="og:title" content="SuaraQalbu · Karena hati juga perlu diingatkan">
+<meta property="og:description" content="Nasihat dan kajian singkat dari para ustadz. Gratis ditonton, dan bisa didukung lewat Saweria.">
+<meta property="og:url" content="https://rafi-zimraan.github.io/suaraqalbu/">
+<meta property="og:image" content="https://rafi-zimraan.github.io/suaraqalbu/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: "mihrab" — halaman terang dan lapang; gambar ustadz dalam bingkai
+   lengkung, satu panel hijau untuk ayat, satu kartu navy untuk donasi. */
+:root {
+  color-scheme: light;
+  --kertas: #f4f6f2;
+  --putih: #ffffff;
+  --tinta: #0f1b2c;
+  --hijau: #1d5a4c;
+  --hijau-tua: #123a31;
+  --mint: #e2ece5;
+  --emas: #c9a14a;
+  --emas-muda: #f3e6c4;
+  --abu: #5b6676;
+  --garis: #dde3dc;
+  --navy: #0f1b2c;
+  --navy-2: #182840;
+
+  --f-teks: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-aksen: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-arab: "Amiri Quran", "Amiri", "Geeza Pro", "Traditional Arabic", serif;
+
+  --lebar: 1180px;
+  --lengkung: 999px 999px 22px 22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--kertas); color: var(--tinta);
+  font-family: var(--f-teks); font-size: 17px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 20; background: var(--kertas);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2.5px solid var(--hijau); outline-offset: 3px; border-radius: 8px; }
+
+.wrap {
+  max-width: var(--lebar); margin-inline: auto;
+  padding-left: max(18px, env(safe-area-inset-left, 0px));
+  padding-right: max(18px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 760px) {
+  .wrap { padding-left: max(36px, env(safe-area-inset-left, 0px)); padding-right: max(36px, env(safe-area-inset-right, 0px)); }
+}
+
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -0.028em; line-height: 1.08; text-wrap: balance; }
+h2 { font-size: clamp(32px, 4.6vw, 52px); }
+h2 em, h1 em { font-family: var(--f-aksen); font-style: italic; font-weight: 400; letter-spacing: -0.01em; color: var(--hijau); }
+p { margin: 0; }
+.lede { color: var(--abu); font-size: 18px; max-width: 58ch; }
+.pil {
+  display: inline-flex; align-items: center; gap: 8px; justify-self: start;
+  font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--hijau);
+  padding: 7px 14px; border-radius: 999px; background: var(--mint);
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 12px; min-height: 52px;
+  padding: 8px 10px 8px 24px; border-radius: 999px; text-decoration: none;
+  font: 600 16px/1.2 var(--f-teks); border: 1.5px solid transparent; cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.btn .bulat {
+  display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+  background: var(--emas); color: var(--tinta); transition: transform .25s;
+}
+.btn:hover .bulat { transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) { .btn:hover .bulat { transform: none; } }
+.btn-gelap { background: var(--tinta); color: var(--putih); }
+.btn-gelap:hover { background: var(--hijau-tua); }
+.btn-garis { border-color: var(--tinta); color: var(--tinta); padding-right: 24px; }
+.btn-garis:hover { background: var(--tinta); color: var(--putih); }
+.btn-emas { background: var(--emas); color: var(--tinta); justify-content: center; padding: 14px 24px; }
+.btn-emas:hover { background: var(--emas-muda); }
+.btn[aria-disabled="true"] { background: transparent; color: var(--abu); border: 1.5px dashed var(--garis); cursor: not-allowed; justify-content: center; padding: 14px 24px; }
+.panah { width: 16px; height: 16px; }
+
+/* ---------- Header ---------- */
+.atas {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: rgba(244, 246, 242, 0.86);
+  backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid transparent; transition: border-color .2s;
+}
+.atas.tergulir { border-bottom-color: var(--garis); }
+.atas .wrap { display: flex; align-items: center; gap: 28px; min-height: 72px; }
+.merek { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.merek img { width: 40px; height: 40px; border-radius: 50%; }
+.merek span { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+.menu { display: none; gap: 30px; }
+.menu a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--abu); }
+.menu a:hover { color: var(--tinta); }
+.atas .btn { min-height: 42px; padding: 6px 6px 6px 18px; font-size: 15px; }
+.atas .btn .bulat { width: 30px; height: 30px; }
+@media (min-width: 860px) { .menu { display: flex; } }
+
+/* ---------- Hero ---------- */
+.hero .wrap { display: grid; gap: 48px; align-items: center; padding-block: 40px 72px; }
+@media (min-width: 980px) { .hero .wrap { grid-template-columns: 1.02fr 0.98fr; gap: 56px; padding-block: 64px 96px; } }
+.hero-teks { display: grid; gap: 24px; min-width: 0; }
+.hero h1 { font-size: clamp(44px, 6.6vw, 84px); line-height: 1.0; letter-spacing: -0.04em; }
+.hero h1 em { display: inline-block; padding-right: 0.06em; }
+.aksi { display: flex; flex-wrap: wrap; gap: 12px; }
+.angka { display: flex; flex-wrap: wrap; gap: 12px 36px; padding-top: 12px; border-top: 1px solid var(--garis); margin-top: 8px; }
+.angka div { display: grid; gap: 2px; }
+.angka b { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.angka span { font-size: 14px; color: var(--abu); }
+
+.kolase { position: relative; aspect-ratio: 1 / 0.98; width: 100%; max-width: 560px; justify-self: center; }
+.kolase .lk { position: absolute; border-radius: var(--lengkung); overflow: hidden; background: var(--mint); box-shadow: 0 24px 60px -24px rgba(15, 27, 44, 0.35); }
+.kolase .lk img { width: 100%; height: 100%; object-fit: cover; }
+.kolase .lk1 { left: 30%; top: 0; width: 40%; height: 74%; z-index: 2; border: 6px solid var(--putih); }
+.kolase .lk2 { left: 0; top: 22%; width: 31%; height: 56%; }
+.kolase .lk3 { right: 0; top: 10%; width: 31%; height: 56%; }
+.kolase .nama-kecil {
+  position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); white-space: nowrap;
+  font-size: 12px; font-weight: 600; color: var(--tinta); background: rgba(255,255,255,.92); padding: 4px 10px; border-radius: 999px;
+}
+.kartu-ayat {
+  position: absolute; left: 4%; bottom: 0; z-index: 3; width: min(320px, 70%);
+  background: var(--putih); border-radius: 20px; padding: 18px 20px;
+  box-shadow: 0 20px 50px -20px rgba(15, 27, 44, 0.35); display: grid; gap: 6px;
+}
+.kartu-ayat p:first-child { font-family: var(--f-aksen); font-style: italic; font-size: 21px; line-height: 1.3; }
+.kartu-ayat p:last-child { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hijau); }
+.gelembung {
+  position: absolute; right: 2%; bottom: 12%; z-index: 3; width: 128px; height: 128px; border-radius: 50%;
+  background: var(--emas); color: var(--tinta); display: grid; place-content: center; text-align: center; gap: 0;
+  box-shadow: 0 18px 40px -16px rgba(201, 161, 74, 0.7);
+}
+.gelembung b { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.gelembung span { font-size: 12.5px; font-weight: 600; line-height: 1.25; margin-top: 4px; }
+.hias { position: absolute; color: var(--emas); }
+.hias.bintang { left: 22%; top: 4%; width: 26px; }
+.hias.bulan { right: 8%; top: 0; width: 30px; color: var(--hijau); }
+@media (max-width: 520px) {
+  .gelembung { width: 100px; height: 100px; bottom: 16%; }
+  .gelembung b { font-size: 24px; }
+  .gelembung span { font-size: 11px; }
+  .kartu-ayat p:first-child { font-size: 17px; }
+  .kartu-ayat { padding: 14px 16px; }
+  .kolase .nama-kecil { display: none; }
+}
+
+/* ---------- Pita nama ustadz ---------- */
+.pita { border-block: 1px solid var(--garis); background: var(--putih); }
+.pita .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; padding-block: 22px; }
+.pita .label { font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--abu); }
+.pita ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.pita li { font-family: var(--f-aksen); font-size: 23px; line-height: 1.2; }
+
+/* ---------- Seksi umum ---------- */
+.seksi .wrap { display: grid; gap: 44px; padding-block: 96px; }
+.kepala { display: grid; gap: 16px; max-width: 760px; align-content: start; }
+.kepala-baris { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; }
+
+/* ---------- Ayat ---------- */
+.ayat .wrap { padding-block: 0; }
+.ayat-panel {
+  position: relative; overflow: hidden; border-radius: 32px; background: var(--hijau-tua); color: var(--putih);
+  padding: 64px 22px; display: grid; gap: 22px; justify-items: center; text-align: center;
+}
+.ayat-panel::before {
+  content: ""; position: absolute; left: 50%; top: 26px; width: min(560px, 86%); height: 140%;
+  transform: translateX(-50%); border: 1px solid rgba(201, 161, 74, 0.35); border-radius: var(--lengkung); pointer-events: none;
+}
+.ayat-panel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23c9a14a' stroke-opacity='.10'%3E%3Crect x='21' y='21' width='30' height='30'/%3E%3Crect x='21' y='21' width='30' height='30' transform='rotate(45 36 36)'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, transparent 30%, #000 100%);
+          mask-image: radial-gradient(70% 70% at 50% 50%, transparent 30%, #000 100%);
+}
+.ayat-panel > * { position: relative; z-index: 1; }
+.ayat .arab { font-family: var(--f-arab); direction: rtl; font-size: clamp(28px, 4.4vw, 46px); line-height: 2.05; max-width: 28ch; }
+.ayat .arti { font-family: var(--f-aksen); font-style: italic; font-size: clamp(21px, 2.6vw, 28px); line-height: 1.4; max-width: 46ch; color: #eef3ef; }
+.ayat .sumber { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--emas); }
+.ayat .sumber span { color: rgba(255,255,255,.65); font-weight: 500; }
+
+/* ---------- Para ustadz ---------- */
+.deret {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px;
+  scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+}
+.ustadz { scroll-snap-align: start; text-decoration: none; display: grid; gap: 12px; min-width: 0; }
+.ustadz .bingkai { aspect-ratio: 4 / 5; max-width: 100%; border-radius: var(--lengkung); overflow: hidden; background: var(--mint); outline: 1px solid var(--garis); outline-offset: 5px; transition: outline-color .25s; }
+.ustadz .bingkai img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.ustadz:hover .bingkai { outline-color: var(--emas); }
+.ustadz:hover .bingkai img { transform: scale(1.05); }
+@media (prefers-reduced-motion: reduce) { .ustadz:hover .bingkai img { transform: none; } }
+.ustadz h3 { font-size: 17px; letter-spacing: -0.015em; line-height: 1.25; }
+.ustadz p { font-size: 13.5px; color: var(--abu); line-height: 1.4; }
+.ustadz .buka { font-size: 13px; font-weight: 600; color: var(--hijau); display: inline-flex; gap: 6px; align-items: center; }
+@media (min-width: 1100px) { .deret { grid-auto-flow: initial; grid-template-columns: repeat(7, 1fr); overflow: visible; } }
+
+.catatan { font-size: 14px; color: var(--abu); }
+
+/* ---------- Video pilihan ---------- */
+.grid-video { display: grid; gap: 22px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-video { grid-template-columns: repeat(3, 1fr); } }
+.video { text-decoration: none; display: grid; gap: 14px; min-width: 0; }
+.video .gambar { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 20px; overflow: hidden; background: var(--mint); }
+.video .gambar img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.video:hover .gambar img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) { .video:hover .gambar img { transform: none; } }
+.video .putar {
+  position: absolute; left: 14px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(255,255,255,.95); display: grid; place-items: center; color: var(--tinta);
+}
+.video h3 { font-size: 19px; letter-spacing: -0.02em; line-height: 1.3; }
+.video p { font-size: 14.5px; color: var(--abu); }
+
+/* ---------- Dukung ---------- */
+.dukung { background: var(--putih); border-block: 1px solid var(--garis); }
+.dukung-grid { display: grid; gap: 48px; align-items: start; }
+@media (min-width: 980px) { .dukung-grid { grid-template-columns: 1fr 0.92fr; gap: 64px; } }
+.dukung-teks { display: grid; gap: 26px; min-width: 0; }
+.biaya { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 520px) { .biaya { grid-template-columns: 1fr 1fr; } }
+.biaya div { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center; padding: 14px; border-radius: 16px; background: var(--kertas); }
+.biaya svg { width: 44px; height: 44px; padding: 10px; border-radius: 12px; background: var(--mint); color: var(--hijau); }
+.biaya b { display: block; font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+.biaya span { font-size: 13.5px; color: var(--abu); }
+.tidak-wajib { font-family: var(--f-aksen); font-style: italic; font-size: clamp(24px, 2.8vw, 30px); line-height: 1.3; }
+.doa { color: var(--abu); }
+
+.panel {
+  position: relative; overflow: hidden; border-radius: 28px; background: var(--navy); color: var(--putih);
+  padding: 32px 22px; display: grid; gap: 24px; min-width: 0;
+}
+@media (min-width: 560px) { .panel { padding: 40px 36px; } }
+.panel::before {
+  content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 300px;
+  border-radius: var(--lengkung); border: 1px solid rgba(201,161,74,.35); transform: rotate(18deg); pointer-events: none;
+}
+.panel > * { position: relative; }
+.panel h3 { font-size: 26px; letter-spacing: -0.02em; }
+.panel .label { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 10px; }
+.alamat { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 18px; border-radius: 16px; background: var(--navy-2); border: 1px solid rgba(255,255,255,.08); }
+.alamat code { font-family: var(--f-teks); font-size: clamp(18px, 2.4vw, 22px); font-weight: 600; word-break: break-all; }
+.alamat code b { color: var(--emas); }
+.salin {
+  font: 600 13px/1 var(--f-teks); padding: 10px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(201,161,74,.6); background: transparent; color: var(--emas);
+}
+.salin:hover { background: rgba(201,161,74,.12); }
+.peka { font-size: 13.5px; color: rgba(255,255,255,.62); margin-top: 8px; }
+.peka b { color: var(--putih); }
+.nominal { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 440px) { .nominal { grid-template-columns: repeat(4, 1fr); } }
+.nominal span {
+  text-align: center; font-weight: 700; font-size: 15.5px; font-variant-numeric: tabular-nums;
+  padding: 12px 6px; border-radius: 14px; background: var(--navy-2); border: 1px solid rgba(255,255,255,.08);
+}
+.nominal-lain { font-size: 13.5px; color: rgba(255,255,255,.62); margin-top: 10px; }
+.metode { display: flex; flex-wrap: wrap; gap: 8px; }
+.metode span { font-size: 13.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.08); }
+.langkah { margin: 0; padding: 0; list-style: none; counter-reset: l; display: grid; gap: 12px; }
+.langkah li { counter-increment: l; display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: baseline; font-size: 15.5px; color: rgba(255,255,255,.9); }
+.langkah li::before {
+  content: counter(l); display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--emas); color: var(--navy); font-size: 13px; font-weight: 700;
+}
+.panel .btn-emas { width: 100%; font-size: 17px; min-height: 56px; }
+.halus { font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,.62); }
+
+/* ---------- Langganan ---------- */
+.status { display: inline-flex; align-items: center; gap: 10px; justify-self: start; font-size: 14px; font-weight: 600; padding: 8px 14px 8px 12px; border-radius: 999px; background: var(--emas-muda); color: #6b5220; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: #c98a1a; box-shadow: 0 0 0 4px rgba(201,138,26,.2); }
+.status.aktif { background: var(--mint); color: var(--hijau); }
+.status.aktif i { background: var(--hijau); box-shadow: 0 0 0 4px rgba(29,90,76,.18); }
+
+.grid-level { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 920px) { .grid-level { grid-template-columns: repeat(3, 1fr); } }
+.level { display: grid; grid-template-rows: auto auto 1fr auto; gap: 20px; min-width: 0; padding: 30px 26px; border-radius: 26px; background: var(--putih); border: 1px solid var(--garis); }
+.level.utama { background: var(--hijau-tua); color: var(--putih); border-color: var(--hijau-tua); }
+.level .atas-level { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.level .nama { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hijau); }
+.level.utama .nama { color: var(--emas); }
+.level .tanda { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: rgba(201,161,74,.18); color: var(--emas); }
+.harga { font-size: 40px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+.harga small { font-size: 15px; font-weight: 500; letter-spacing: 0; color: var(--abu); margin-left: 4px; }
+.level.utama .harga small { color: rgba(255,255,255,.6); }
+.benefit { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; }
+.benefit li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 15.5px; line-height: 1.5; }
+.benefit li svg { width: 20px; height: 20px; margin-top: 2px; color: var(--hijau); }
+.level.utama .benefit li svg { color: var(--emas); }
+.benefit li.warisan { color: var(--abu); }
+.level.utama .benefit li.warisan { color: rgba(255,255,255,.65); }
+.level .btn { width: 100%; justify-content: center; padding: 14px 24px; }
+.level .btn-garis { padding-right: 24px; }
+.level.utama .btn-emas[aria-disabled="true"], .level.utama .btn[aria-disabled="true"] { color: rgba(255,255,255,.6); border-color: rgba(255,255,255,.25); }
+
+.janji { display: grid; gap: 16px; }
+@media (min-width: 760px) { .janji { grid-template-columns: 1fr 1fr; gap: 24px; } }
+.janji p { font-size: 15.5px; color: var(--abu); padding: 18px 20px; border-radius: 18px; background: var(--putih); border: 1px solid var(--garis); }
+.janji b { color: var(--tinta); font-weight: 700; }
+
+/* ---------- Tanya jawab ---------- */
+.tanya { background: var(--putih); border-top: 1px solid var(--garis); }
+.tanya-grid { display: grid; gap: 36px; }
+@media (min-width: 920px) { .tanya-grid { grid-template-columns: 0.8fr 1.2fr; gap: 64px; } }
+.daftar-tanya { display: grid; gap: 0; border-top: 1px solid var(--garis); }
+details { border-bottom: 1px solid var(--garis); }
+summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 20px 0; font-weight: 600; font-size: 17.5px; letter-spacing: -0.01em;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "+"; flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--mint); color: var(--hijau); font-size: 20px; font-weight: 500; transition: transform .2s;
+}
+details[open] summary::after { transform: rotate(45deg); }
+details p { padding: 0 48px 22px 0; color: var(--abu); max-width: 64ch; }
+
+/* ---------- Kaki ---------- */
+.kaki { background: var(--navy); color: rgba(255,255,255,.86); }
+.kaki .wrap { display: grid; gap: 36px; padding-block: 64px 48px; }
+.kaki-atas { display: grid; gap: 36px; }
+@media (min-width: 860px) { .kaki-atas { grid-template-columns: 1.3fr 1fr 1fr; } }
+.kaki .merek span { color: var(--putih); font-size: 22px; }
+.kaki .tagline { font-family: var(--f-aksen); font-style: italic; font-size: 24px; line-height: 1.3; color: var(--putih); margin-top: 14px; max-width: 22ch; }
+.kaki h4 { margin: 0 0 14px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--emas); }
+.kaki ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.kaki ul a { text-decoration: none; }
+.kaki ul a:hover { color: var(--emas); }
+.surel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.surel span { user-select: all; word-break: break-all; }
+.disclaimer { padding: 22px 24px; border-radius: 18px; background: var(--navy-2); font-size: 14.5px; line-height: 1.65; color: rgba(255,255,255,.72); }
+.disclaimer b { color: var(--putih); }
+.hak { font-size: 13.5px; color: rgba(255,255,255,.5); }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-panah" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cek" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".16"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-putar" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="atas" id="atas">
+  <div class="wrap">
+    <a class="merek" href="#awal" aria-label="SuaraQalbu, kembali ke atas">
+      <img src="img/logo.png" alt="" width="40" height="40">
+      <span>SuaraQalbu</span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="#ustadz">Ustadz</a>
+      <a href="#dukung">Dukung</a>
+      <a href="#langganan">Langganan</a>
+      <a href="#tanya">Tanya jawab</a>
+    </nav>
+    <a class="btn btn-gelap" href="#dukung">Dukung <span class="bulat"><svg class="panah"><use href="#i-panah"/></svg></span></a>
+  </div>
+</header>
+
+<main id="awal">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-teks">
+        <p class="pil">🌿 Nasihat &amp; kajian singkat</p>
+        <h1>Karena hati juga perlu <em>diingatkan.</em></h1>
+        <p class="lede">SuaraQalbu menyunting potongan kajian para ustadz menjadi video singkat. Cukup beberapa menit di sela kesibukan, untuk menenangkan dan mengingatkan hati.</p>
+        <div class="aksi">
+          <a class="btn btn-gelap" href="#dukung">Dukung SuaraQalbu <span class="bulat"><svg class="panah"><use href="#i-panah"/></svg></span></a>
+          <a class="btn btn-garis" href="https://www.youtube.com/@Suaraqalbu.channel" target="_blank" rel="noopener">Tonton di YouTube</a>
+        </div>
+        <div class="angka">
+          <div><b>390+</b><span>video kajian</span></div>
+          <div><b>7</b><span>ustadz</span></div>
+          <div><b>Gratis</b><span>ditonton siapa saja</span></div>
+        </div>
+      </div>
+
+      <div class="kolase">
+        <svg class="hias bintang" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.6 5.9 5.9 2.6-5.9 2.6L12 18.5l-2.6-5.9L3.5 10l5.9-2.6z" fill="currentColor"/></svg>
+        <svg class="hias bulan" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3.2A9 9 0 1 0 20.8 17 7.2 7.2 0 0 1 15.5 3.2z" fill="currentColor"/></svg>
+        <div class="lk lk2"><img src="img/potret-abdul-somad.jpg" alt="Ustadz Abdul Somad" width="480" height="600"><span class="nama-kecil">Ust. Abdul Somad</span></div>
+        <div class="lk lk1"><img src="img/potret-adi-hidayat.jpg" alt="Ustadz Adi Hidayat" width="480" height="600"><span class="nama-kecil">Ust. Adi Hidayat</span></div>
+        <div class="lk lk3"><img src="img/potret-khalid-basalamah.jpg" alt="Ustadz Khalid Basalamah" width="480" height="600"><span class="nama-kecil">Ust. Khalid Basalamah</span></div>
+        <div class="kartu-ayat">
+          <p>“Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram.”</p>
+          <p>QS. Ar-Ra’d [13]: 28</p>
+        </div>
+        <div class="gelembung" aria-hidden="true"><b>3,6 rb+</b><span>subscriber<br>YouTube</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pita" aria-label="Ustadz yang kajiannya tampil">
+    <div class="wrap">
+      <p class="label">Kajian dari</p>
+      <ul>
+        <li>Das’ad Latif</li><li>Abdul Somad</li><li>Adi Hidayat</li><li>Syafiq Riza Basalamah</li><li>Ammi Nur Baits</li><li>Khalid Basalamah</li><li>Firanda Andirja</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seksi" id="ustadz">
+    <div class="wrap">
+      <div class="kepala-baris">
+        <div class="kepala">
+          <p class="pil">Para ustadz</p>
+          <h2>Pilih ustadz, <em>mulai dari playlist-nya.</em></h2>
+          <p class="lede">Semua kajian gratis di YouTube. Nama ustadz selalu kami cantumkan di setiap video.</p>
+        </div>
+        <a class="btn btn-garis" href="https://www.youtube.com/@Suaraqalbu.channel/playlists" target="_blank" rel="noopener">Semua playlist</a>
+      </div>
+
+      <div class="deret">
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLUQ0SC0GbOfk" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-dasad-latif.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Das’ad Latif</h3><p>Ceramah di depan pejabat &amp; aparat</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLGI6Cvr9NLyw" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-abdul-somad.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Abdul Somad</h3><p>Kajian seputar UAS</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLYudAvaJi96E" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-adi-hidayat.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Adi Hidayat</h3><p>Nasihat tentang sholat &amp; lisan</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLDdXqlP_3wsaNoER8G2LepRIfCE373pe4" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-syafiq-basalamah.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Syafiq Riza Basalamah</h3><p>Nasihat dan kajian singkat</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLDdXqlP_3wsYMXU1IaM42bTkkKu17rKqF" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-ammi-nur-baits.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Ammi Nur Baits</h3><p>Penyejuk jiwa</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLDdXqlP_3wsbEoJNi7GhJKxJSkTPgaL6l" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-khalid-basalamah.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Khalid Basalamah</h3><p>Nasihat dan motivasi islami</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+        <a class="ustadz" href="https://www.youtube.com/playlist?list=PLDdXqlP_3wsZfDpFLxzwr-NRTir9XQda2" target="_blank" rel="noopener">
+          <div class="bingkai"><img src="img/potret-firanda-andirja.jpg" alt="" width="480" height="600" loading="lazy"></div>
+          <div><h3>Ustadz Firanda Andirja</h3><p>Nasihat dan kajian singkat</p></div>
+          <span class="buka">Buka playlist <svg class="panah"><use href="#i-panah"/></svg></span>
+        </a>
+      </div>
+      <p class="catatan">Foto diambil dari thumbnail video di channel SuaraQalbu. SuaraQalbu bukan channel resmi para ustadz tersebut.</p>
+    </div>
+  </section>
+
+  <section class="ayat" aria-label="Ayat pengingat">
+    <div class="wrap">
+      <div class="ayat-panel">
+        <p class="arab" lang="ar">ٱلَّذِينَ ءَامَنُوا۟ وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ ٱللَّهِ ۗ أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ</p>
+        <p class="arti">“(yaitu) orang-orang yang beriman dan hati mereka menjadi tenteram dengan mengingat Allah. Ingatlah, hanya dengan mengingat Allah hati menjadi tenteram.”</p>
+        <p class="sumber">QS. Ar-Ra’d [13]: 28 <span>· Terjemah Kementerian Agama RI</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksi" aria-labelledby="judul-video">
+    <div class="wrap">
+      <div class="kepala-baris">
+        <div class="kepala">
+          <p class="pil">Kajian pilihan</p>
+          <h2 id="judul-video">Mulai dari <em>tiga nasihat ini.</em></h2>
+        </div>
+        <a class="btn btn-garis" href="https://www.youtube.com/@Suaraqalbu.channel/videos" target="_blank" rel="noopener">Semua video</a>
+      </div>
+      <div class="grid-video">
+        <a class="video" href="https://www.youtube.com/watch?v=Yw6aHns43ho" target="_blank" rel="noopener">
+          <div class="gambar"><img src="img/video-manfaat-sholat.jpg" alt="" width="640" height="360" loading="lazy"><span class="putar"><svg width="20" height="20"><use href="#i-putar"/></svg></span></div>
+          <div><h3>5 manfaat sholat dalam kehidupan di usia tua</h3><p>Ustadz Adi Hidayat</p></div>
+        </a>
+        <a class="video" href="https://www.youtube.com/watch?v=Ezt2XEMeEzI" target="_blank" rel="noopener">
+          <div class="gambar"><img src="img/video-sedekah-istighfar.jpg" alt="" width="640" height="360" loading="lazy"><span class="putar"><svg width="20" height="20"><use href="#i-putar"/></svg></span></div>
+          <div><h3>Keajaiban sedekah dan istighfar</h3><p>Ustadz Khalid Basalamah</p></div>
+        </a>
+        <a class="video" href="https://www.youtube.com/watch?v=OaG-MEZJ0t8" target="_blank" rel="noopener">
+          <div class="gambar"><img src="img/video-perang-hunain.jpg" alt="" width="640" height="360" loading="lazy"><span class="putar"><svg width="20" height="20"><use href="#i-putar"/></svg></span></div>
+          <div><h3>Perang Hunain: saat ribuan pasukan tak menjamin kemenangan</h3><p>Ustadz Das’ad Latif</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksi dukung" id="dukung">
+    <div class="wrap">
+      <div class="dukung-grid">
+        <div class="dukung-teks">
+          <p class="pil">Dukung SuaraQalbu</p>
+          <h2>Bantu nasihat ini sampai ke <em>lebih banyak hati.</em></h2>
+          <p class="lede">Setiap video melewati proses memilih kajian, memotong, memberi teks, lalu mengunggah. Dukungan Anda dipakai untuk biaya operasional itu.</p>
+          <div class="biaya">
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9.5 4.5 2.5-4.5 2.5z"/></svg>
+              <p><b>Penyuntingan video</b><span>memotong &amp; memberi teks</span></p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 13.5z"/><path d="M2.5 20h19"/></svg>
+              <p><b>Langganan software</b><span>editing &amp; desain</span></p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 8.5a4.75 4.75 0 0 1-.5 9.5z"/><path d="M12 11v5m-2-2 2 2 2-2"/></svg>
+              <p><b>Penyimpanan &amp; internet</b><span>unggah rutin setiap hari</span></p>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+              <p><b>Perangkat kerja</b><span>laptop &amp; perlengkapan</span></p>
+            </div>
+          </div>
+          <p class="tidak-wajib">Tidak wajib. Doa Anda pun sudah sangat berarti 🤲</p>
+          <p class="doa">Semoga Allah membalas setiap kebaikan Anda.</p>
+        </div>
+
+        <div class="panel" aria-labelledby="judul-saweria">
+          <h3 id="judul-saweria">Dukung lewat Saweria</h3>
+          <div>
+            <p class="label">Alamat halaman</p>
+            <div class="alamat">
+              <code>saweria.co/<b>suaraQalbu</b></code>
+              <button class="salin" id="salin-saweria" type="button" data-salin="https://saweria.co/suaraQalbu">Salin</button>
+            </div>
+            <p class="peka">Perhatikan huruf <b>Q</b> kapital. Alamat ini peka huruf besar-kecil.</p>
+          </div>
+          <div>
+            <p class="label">Pilihan nominal di Saweria</p>
+            <div class="nominal"><span>50rb</span><span>150rb</span><span>300rb</span><span>500rb</span></div>
+            <p class="nominal-lain">Atau ketik nominal lain sesuai kemampuan.</p>
+          </div>
+          <div>
+            <p class="label">Cara bayar</p>
+            <div class="metode"><span>QRIS</span><span>GoPay</span><span>OVO</span><span>DANA</span><span>Virtual Account</span></div>
+          </div>
+          <ol class="langkah">
+            <li>Buka halaman Saweria SuaraQalbu.</li>
+            <li>Pilih nominal, lalu tulis nama dan pesan. Nama boleh samaran.</li>
+            <li>Bayar dengan QRIS, e-wallet, atau virtual account bank.</li>
+          </ol>
+          <a class="btn btn-emas" href="https://saweria.co/suaraQalbu" target="_blank" rel="noopener">Buka Saweria <svg class="panah"><use href="#i-panah"/></svg></a>
+          <p class="halus">Biaya layanan pembayaran ditampilkan Saweria sebelum Anda membayar. Donasi ini untuk operasional channel SuaraQalbu. Para ustadz tidak mengelola channel ini dan tidak menerima donasi lewat halaman ini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksi" id="langganan">
+    <div class="wrap">
+      <div class="kepala">
+        <p class="pil">Langganan member YouTube</p>
+        <h2>Jadi member, dapat <em>e-book susunan SuaraQalbu.</em></h2>
+        <p class="status" id="status-member"><i aria-hidden="true"></i><span>Sedang direview YouTube. Dibuka setelah disetujui.</span></p>
+      </div>
+
+      <div class="grid-level">
+        <article class="level">
+          <div class="atas-level"><p class="nama">Basic</p></div>
+          <p class="harga">Rp30.000<small>/bulan</small></p>
+          <ul class="benefit">
+            <li><svg><use href="#i-cek"/></svg><span>Lencana member dan emoji khusus SuaraQalbu</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>3 e-book <b>Doa Para Nabi</b>, teks Arab dan terjemah Kemenag</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>Rangkuman 1 kajian tiap pekan, dengan link kajian lengkapnya</span></li>
+          </ul>
+          <a class="btn btn-garis tombol-gabung" href="https://www.youtube.com/@Suaraqalbu.channel/join" target="_blank" rel="noopener">Gabung di YouTube</a>
+        </article>
+        <article class="level">
+          <div class="atas-level"><p class="nama">Medium</p></div>
+          <p class="harga">Rp60.000<small>/bulan</small></p>
+          <ul class="benefit">
+            <li class="warisan"><svg><use href="#i-cek"/></svg><span>Semua benefit Basic</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>+7 e-book <b>Doa Keluarga</b> (total 10): anak saleh, pernikahan, orang tua, ampunan</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>Daftar link kajian pilihan, diperbarui tiap bulan</span></li>
+          </ul>
+          <a class="btn btn-garis tombol-gabung" href="https://www.youtube.com/@Suaraqalbu.channel/join" target="_blank" rel="noopener">Gabung di YouTube</a>
+        </article>
+        <article class="level utama">
+          <div class="atas-level"><p class="nama">Premium</p><span class="tanda">Koleksi terlengkap</span></div>
+          <p class="harga">Rp149.900<small>/bulan</small></p>
+          <ul class="benefit">
+            <li class="warisan"><svg><use href="#i-cek"/></svg><span>Semua benefit Basic dan Medium</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>150 e-book <b>Seri Scale Up Rezeki</b>: ayat pegangan, renungan, langkah praktis, jurnal 7 hari</span></li>
+            <li><svg><use href="#i-cek"/></svg><span>Rangkuman kajian tematik tentang rezeki dan keluarga</span></li>
+          </ul>
+          <a class="btn btn-emas tombol-gabung" href="https://www.youtube.com/@Suaraqalbu.channel/join" target="_blank" rel="noopener">Gabung di YouTube</a>
+        </article>
+      </div>
+
+      <div class="janji">
+        <p><b>Kajian ustadz tetap gratis untuk semua orang.</b> Yang khusus member hanyalah e-book dan rangkuman yang kami susun sendiri. Link unduhan e-book muncul di halaman benefit member YouTube setelah Anda bergabung.</p>
+        <p><b>Isi e-book bersumber jelas.</b> Ayat Al-Qur’an memakai terjemah Kementerian Agama RI, dan doa dari hadits dicantumkan beserta derajatnya. E-book ini susunan SuaraQalbu, bukan materi para ustadz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksi tanya" id="tanya">
+    <div class="wrap">
+      <div class="tanya-grid">
+        <div class="kepala">
+          <p class="pil">Tanya jawab</p>
+          <h2>Yang sering <em>ditanyakan.</em></h2>
+        </div>
+        <div class="daftar-tanya">
+          <details open>
+            <summary>Apakah donasi wajib?</summary>
+            <p>Tidak. Semua video tetap bisa ditonton gratis. Kalau belum bisa berdonasi, doa Anda pun sudah sangat berarti bagi kami.</p>
+          </details>
+          <details>
+            <summary>Donasi dipakai untuk apa?</summary>
+            <p>Untuk operasional channel: penyuntingan video, langganan software, penyimpanan dan internet, serta perangkat kerja.</p>
+          </details>
+          <details>
+            <summary>Apakah para ustadz menerima donasi ini?</summary>
+            <p>Tidak. SuaraQalbu bukan channel resmi para ustadz, dan para ustadz tidak mengelola channel ini. Donasi hanya untuk operasional SuaraQalbu.</p>
+          </details>
+          <details>
+            <summary>Bagaimana cara mendapat e-book member?</summary>
+            <p>Gabung member di YouTube, lalu buka halaman benefit member. Link unduhan e-book tampil di sana sesuai level yang Anda pilih.</p>
+          </details>
+          <details>
+            <summary>Apakah kajian akan dikunci khusus member?</summary>
+            <p>Tidak. Kajian para ustadz tetap gratis di YouTube untuk semua orang. Yang khusus member hanya e-book dan rangkuman susunan SuaraQalbu.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="kaki">
+  <div class="wrap">
+    <div class="kaki-atas">
+      <div>
+        <a class="merek" href="#awal"><img src="img/logo.png" alt="" width="40" height="40"><span>SuaraQalbu</span></a>
+        <p class="tagline">Karena hati juga perlu diingatkan.</p>
+      </div>
+      <div>
+        <h4>Ikuti</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@Suaraqalbu.channel" target="_blank" rel="noopener">YouTube · @Suaraqalbu.channel</a></li>
+          <li><a href="https://www.facebook.com/suaraqalbu.channel" target="_blank" rel="noopener">Facebook · SuaraQalbu</a></li>
+          <li><a href="https://saweria.co/suaraQalbu" target="_blank" rel="noopener">Saweria · suaraQalbu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <div class="surel">
+          <span>suaraqalbu.channel@gmail.com</span>
+          <button class="salin" id="salin-surel" type="button" data-salin="suaraqalbu.channel@gmail.com">Salin</button>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer"><b>Keterangan.</b> Channel ini bukan channel resmi. Konten merupakan potongan kajian dari berbagai ustadz, disajikan untuk tujuan dakwah dan edukasi agar nasihat mereka dapat tersebar lebih luas dan bermanfaat bagi umat.</p>
+    <p class="hak">© 2026 SuaraQalbu</p>
+  </div>
+</footer>
+
+<script>
+  // Ubah ke true setelah Memberships di-Launch di YouTube Studio.
+  const MEMBERSHIP_AKTIF = false;
+
+  (function () {
+    const status = document.getElementById('status-member');
+    if (MEMBERSHIP_AKTIF) {
+      status.classList.add('aktif');
+      status.querySelector('span').textContent = 'Sudah dibuka. Pilih level, lalu gabung di YouTube.';
+    } else {
+      document.querySelectorAll('.tombol-gabung').forEach(function (a) {
+        a.setAttribute('aria-disabled', 'true');
+        a.removeAttribute('href');
+        a.removeAttribute('target');
+        a.textContent = 'Segera dibuka';
+      });
+    }
+
+    const atas = document.getElementById('atas');
+    const cekGulir = function () { atas.classList.toggle('tergulir', window.scrollY > 8); };
+    window.addEventListener('scroll', cekGulir, { passive: true });
+    cekGulir();
+
+    document.querySelectorAll('.salin').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const teks = btn.dataset.salin;
+        const tandai = function (label) {
+          btn.textContent = label;
+          setTimeout(function () { btn.textContent = 'Salin'; }, 1800);
+        };
+        const pilihManual = function () {
+          const target = btn.previousElementSibling;
+          const r = document.createRange();
+          r.selectNodeContents(target);
+          const s = window.getSelection();
+          s.removeAllRanges(); s.addRange(r);
+          tandai('Tekan salin');
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(teks).then(function () { tandai('Tersalin'); }, pilihManual);
+        } else {
+          pilihManual();
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
